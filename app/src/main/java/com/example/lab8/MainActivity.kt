@@ -66,5 +66,24 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             popupMenu2.show()
         }
+        val popupMenu3 = PopupMenu(this,button)
+        popupMenu3.inflate(R.menu.menu3)
+        popupMenu3.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.one -> {
+                    textView.textSize = 28.toFloat()
+                }
+                R.id.two -> {
+                    textView.textSize = 32.toFloat()
+                }
+                R.id.three -> {
+                    textView.textSize = 36.toFloat()
+                }
+            }
+            false
+        }
+        textView.setOnClickListener {
+            popupMenu3.show()
+        }
     }
 }
